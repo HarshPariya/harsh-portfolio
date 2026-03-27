@@ -1,0 +1,63 @@
+{
+  "name": "harsh-pariya-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "zero-icons",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "clean": "rm -rf .next node_modules package-lock.json",
+    "reset": "npm run clean && rm -rf node_modules && rm -rf package-lock.json && npm install",
+    "test": "playwright test",
+    "test:ui": "playwright test -a-ui"
+  },
+  "dependencies": {
+    "@react-zero-ui/core": "^0.3.4",
+    "@react-zero-ui/icon-sprite": "^0.3.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/speed-insights": "^1.3.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "motion": "^12.23.25",
+    "next": "16.0.10",
+    "react": "^19.2.1",
+    "react-activity-calendar": "^3.0.5",
+    "react-dom": "^19.2.1",
+    "react-github-calendar": "^5.0.4",
+    "react-markdown": "^10.1.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
+    "@next/bundle-analyzer": "^16.0.7",
+    "@next/eslint-plugin-next": "^16.0.7",
+    "@playwright/test": "^1.57.0",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-unused-imports": "^4.3.0",
+    "fast-glob": "^3.3.3",
+    "husky": "^9.1.7",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "schema-dts": "^1.1.5",
+    "typescript": "^5.9.3"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11"
+  ]
+}

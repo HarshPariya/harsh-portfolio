@@ -1,0 +1,6 @@
+
+> harsh-pariya-portfolio@0.1.0 type-check
+> tsc --noEmit
+
+app/components/CodingProfile/LeetCodeStats.tsx(74,40): error TS2339: Property 'leetcode' does not exist on type '{ readonly linkedIn: "https://www.linkedin.com/in/harsh-pariya/"; readonly github: "https://github.com/HarshPariya"; readonly instagram: "https://www.instagram.com/_harshpariya_01"; readonly x: "https://x.com/harshpariya_01"; }'.
+app/components/CodingProfile/LeetCodeStats.tsx(254,49): error TS2339: Property 'leetcode' does not exist on type '{ readonly linkedIn: "https://www.linkedin.com/in/harsh-pariya/"; readonly github: "https://github.com/HarshPariya"; readonly instagram: "https://www.instagram.com/_harshpariya_01"; readonly x: "https://x.com/harshpariya_01"; }'.
