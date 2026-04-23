@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+.gitignore
+*.md
+e2e
+test-results
+.husky
+scripts
+tsc_errors.txt
+.DS_Store
+playwright.config.ts
