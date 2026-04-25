@@ -848,8 +848,7 @@ export const harshPortfolioV2: ProjectData = {
         "Glassmorphism and subtle gradient accents",
         "Consistent micro-animation language across sections",
       ],
-      icon: "/assets/design-black.webp",
-      feature: <ApproachTabsImage src="/assets/brand-images.jpg" alt="Design System" />,
+      feature: <ApproachTabsImage src="/assets/FolioHarshDev.png" alt="Design System" />,
     },
     {
       id: 2,
@@ -863,8 +862,7 @@ export const harshPortfolioV2: ProjectData = {
         "Smooth hover effects on all interactive elements",
         "Splash cursor and marquee animations",
       ],
-      icon: "/assets/tool-black.webp",
-      feature: <ApproachTabsImage src="/assets/brand-images.jpg" alt="Animations" />,
+      feature: <ApproachTabsImage src="/assets/FolioHarshDev.png" alt="Animations" />,
     },
     {
       id: 3,
@@ -878,8 +876,7 @@ export const harshPortfolioV2: ProjectData = {
         "Tech stack marquee with live icons",
         "Process workflow visualization",
       ],
-      icon: "/assets/notepad-black.webp",
-      feature: <ApproachTabsImage src="/assets/competitor-analysis.png" alt="Sections Overview" />,
+      feature: <ApproachTabsImage src="/assets/FolioHarshDev.png" alt="Sections Overview" />,
     },
     {
       id: 4,
@@ -893,8 +890,7 @@ export const harshPortfolioV2: ProjectData = {
         "Structured metadata and Open Graph tags",
         "Deployed on Vercel with edge CDN",
       ],
-      icon: "/assets/search-black.webp",
-      feature: <ApproachTabsImage src="/assets/performance-metrics-automedics-web-development.webp" alt="Performance Metrics" />,
+      feature: <ApproachTabsImage src="/assets/FolioHarshDev.png" alt="Performance Metrics" />,
     },
   ],
 }

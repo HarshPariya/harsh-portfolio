@@ -82,7 +82,13 @@ export const ApproachTabs: React.FC<{ phases: Phase[] }> = ({ phases }) => {
                 <div className="absolute inset-0 z-0 rounded-xl border border-[var(--beige-200)]" />
                 <div className="flex flex-col items-center gap-1">
                   <div className="z-1">
-                    <Image src={phase.icon} alt={phase.title} width={50} height={50} />
+                    {phase.icon ? (
+                      <Image src={phase.icon} alt={phase.title} width={50} height={50} />
+                    ) : (
+                      <div className="flex h-[50px] w-[50px] items-center justify-center rounded-xl bg-[var(--beige-500)] text-lg font-bold text-white">
+                        {phase.id}
+                      </div>
+                    )}
                     <span className="text-xs font-semibold text-nowrap max-sm:hidden">Phase {phase.id}</span>
                   </div>
                   <span className="z-1 text-xs leading-tight opacity-75 sm:text-nowrap">{phase.title}</span>
@@ -109,7 +115,13 @@ export const ApproachTabs: React.FC<{ phases: Phase[] }> = ({ phases }) => {
               {/* Left */}
               <div className="space-y-2 md:space-y-4">
                 <div className="flex items-center gap-4 max-sm:justify-center">
-                  <Image src={phase.icon} alt={phase.title} width={100} height={100} className="max-sm:h-20 max-sm:w-20" />
+                  {phase.icon ? (
+                    <Image src={phase.icon} alt={phase.title} width={100} height={100} className="max-sm:h-20 max-sm:w-20" />
+                  ) : (
+                    <div className="flex h-[100px] w-[100px] shrink-0 items-center justify-center rounded-2xl bg-[var(--beige-500)] text-4xl font-bold text-white max-sm:h-20 max-sm:w-20">
+                      {phase.id}
+                    </div>
+                  )}
                   <div>
                     <H3 className="mb-2 max-sm:text-xl">{phase.title}</H3>
                     <Text size="sm">{phase.subtitle}</Text>

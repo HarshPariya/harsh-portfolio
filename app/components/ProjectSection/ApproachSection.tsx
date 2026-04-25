@@ -7,7 +7,7 @@ export interface Phase {
   subtitle: string
   description: string
   details: string[]
-  icon: string
+  icon?: string
   feature: React.ReactNode
 }
 
