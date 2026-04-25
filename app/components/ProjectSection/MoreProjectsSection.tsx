@@ -13,16 +13,23 @@ export const MoreProjectsSection = () => {
       <HeaderText title="More Projects" />
 
       <ZeroUICarousel xlSlidesToShow={2} slidesToShow={2} mobileSlidesToShow={1} gap={24} autoplay={3000} className="mb-11 h-full w-full text-stone-800">
-        <div className="relative h-full w-full">
-          <div className="card-image flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white opacity-90 transition-opacity duration-500 will-change-transform group-hover:after:opacity-0 md:rounded-3xl">
-            <div className="rounded-lg bg-[var(--beige-500)] p-5">
-              <Icon name="plus" className="h-5 w-5 text-white" />
-            </div>{" "}
-            <Typography className="mt-5 max-w-xs text-center" as="p">
-              Got a cool idea? This spot is waiting for your success story.
+        <a
+          href="/#contact"
+          className="group/cta relative block h-full w-full cursor-pointer"
+          aria-label="Contact Harsh Pariya for your next project"
+        >
+          <div className="card-image flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-[var(--beige-300)] bg-white transition-all duration-300 will-change-transform hover:border-[var(--beige-500)] hover:shadow-lg md:rounded-3xl">
+            <div className="rounded-xl bg-[var(--beige-500)] p-5 transition-transform duration-300 group-hover/cta:scale-110">
+              <Icon name="plus" className="h-6 w-6 text-white" />
+            </div>
+            <Typography className="mt-5 max-w-xs text-center font-medium" as="p">
+              Got a project in mind?
             </Typography>
+            <span className="mt-2 text-sm font-semibold text-[var(--beige-500)] underline underline-offset-2 transition-opacity duration-200 group-hover/cta:opacity-80">
+              Let&apos;s work together →
+            </span>
           </div>
-        </div>
+        </a>
         {STATIC_PROJECTS.map((project) => {
           // Since Card now handles its own links (buttons), we typically don't need a wrapper 
           // if we only rely on the buttons. However, if there are layout constraints requiring a wrapper
