@@ -83,12 +83,26 @@ export const STATIC_PROJECTS: StaticProject[] = [
     type: "Portfolio Website",
     text: "View on GitHub",
     title: "Portfolio (Next.js)",
-    href: "https://folioharshdev.vercel.app/",
-    githubUrl: "https://github.com/HarshPariya/harsh-portfolio.git",
+    href: "https://portfolio-by-harshp.netlify.app/",
+    githubUrl: "https://github.com/HarshPariya/Portfolio_NextJs.git",
     ariaLabel: "View Portfolio Next.js on GitHub",
     isExternal: true,
   },
+  {
+    id: "harsh-portfolio-v2",
+    src: portfolioNextJsImage,
+    alt: "Folio Harsh Dev — Portfolio v2 Preview",
+    color: "#7C3AED",
+    type: "Portfolio v2 — Vercel",
+    text: "View on GitHub",
+    title: "Folio Harsh Dev (v2)",
+    href: "https://folioharshdev.vercel.app/",
+    githubUrl: "https://github.com/HarshPariya/harsh-portfolio.git",
+    ariaLabel: "View Folio Harsh Dev Portfolio v2 on GitHub",
+    isExternal: true,
+  },
 ]
+
 
 export const ProjectsStatic: React.FC = () => {
   return (

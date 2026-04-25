@@ -9,6 +9,7 @@ import {
   travelgoSite,
   quizApp,
   portfolioNextJs,
+  harshPortfolioV2,
   ProjectData,
 } from "@/app/data/project-data"
 import { notFound } from "next/navigation"
@@ -27,6 +28,7 @@ const projectsMap: Record<string, ProjectData> = {
   [travelgoSite.slug]: travelgoSite,
   [quizApp.slug]: quizApp,
   [portfolioNextJs.slug]: portfolioNextJs,
+  [harshPortfolioV2.slug]: harshPortfolioV2,
 }
 
 // Generate static params for all projects

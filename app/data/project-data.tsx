@@ -782,8 +782,8 @@ export const portfolioNextJs: ProjectData = {
     description:
       "A modern, responsive portfolio website built with Next.js featuring a stunning dark-space themed design, animated hero section, interactive project showcases, and seamless navigation. Demonstrates full-stack frontend skills with React, Next.js, and polished UI/UX.",
     categories: ["Next.js", "React", "Portfolio", "Frontend", "CSS"],
-    link: "https://folioharshdev.vercel.app/",
-    githubLink: "https://github.com/HarshPariya/harsh-portfolio.git",
+    link: "https://portfolio-by-harshp.netlify.app/",
+    githubLink: "https://github.com/HarshPariya/Portfolio_NextJs.git",
   },
   slug: "portfolio-nextjs",
   beforeAfter: {
@@ -795,4 +795,105 @@ export const portfolioNextJs: ProjectData = {
   },
   results: [],
   phases: [],
+}
+
+export const harshPortfolioV2: ProjectData = {
+  projectImage: portfolioNextJsHero,
+  hero: {
+    title: "Folio Harsh Dev — Portfolio v2",
+    client: "Personal Project",
+    year: "2026",
+    description:
+      "A premium, fully custom developer portfolio built with Next.js 16, TypeScript, and Framer Motion. Designed from scratch with a refined beige/dark aesthetic, scroll-triggered animations, a dynamic project showcase, GitHub & LeetCode stats integration, an experience timeline, tech marquee, and a fully responsive layout. Deployed on Vercel with blazing-fast performance.",
+    categories: ["Next.js", "TypeScript", "Framer Motion", "Vercel", "Full Stack"],
+    link: "https://folioharshdev.vercel.app/",
+    githubLink: "https://github.com/HarshPariya/harsh-portfolio.git",
+  },
+  slug: "harsh-portfolio-v2",
+  beforeAfter: {
+    heroBefore: portfolioNextJsHero,
+    heroBeforeMobile: portfolioNextJsHero,
+    iframe: "https://folioharshdev.vercel.app/",
+    beforeAltText: "Folio Harsh Dev Portfolio v2 Desktop",
+    beforeMobileAltText: "Folio Harsh Dev Portfolio v2 Mobile",
+    afterAltText: "Folio Harsh Dev Portfolio v2 Live",
+  },
+  results: [
+    {
+      title: "Performance Score",
+      description: "Lighthouse performance score on Vercel",
+      percentageIncrease: 98,
+      chart: <RadialProgressRing percentage={98} />,
+      dataSource: "Lighthouse Audit",
+    },
+    {
+      title: "Sections Built",
+      description: "Custom interactive sections",
+      percentageIncrease: 10,
+      chart: <TrafficBarChart startValue={0} endValue={10} />,
+      dataSource: "Portfolio Architecture",
+    },
+  ],
+  phases: [
+    {
+      id: 1,
+      title: "Design System",
+      subtitle: "Premium Beige & Dark Aesthetic",
+      description:
+        "Built a cohesive design system using CSS variables, Google Fonts (DM Serif Display + Inter), and a curated warm beige/dark palette. Every token was hand-crafted for a premium look and feel.",
+      details: [
+        "Custom CSS design tokens (colors, spacing, radii)",
+        "Typography pairing: DM Serif Display + Inter",
+        "Glassmorphism and subtle gradient accents",
+        "Consistent micro-animation language across sections",
+      ],
+      icon: "/assets/design-black.webp",
+      feature: <ApproachTabsImage src="/assets/brand-images.jpg" alt="Design System" />,
+    },
+    {
+      id: 2,
+      title: "Animations",
+      subtitle: "Scroll-Triggered & Micro-Interactions",
+      description:
+        "Implemented Framer Motion scroll-triggered reveals, staggered list animations, and fluid page transitions to create a dynamic, alive experience without sacrificing performance.",
+      details: [
+        "Framer Motion scroll-triggered entry animations",
+        "Staggered text and card reveal sequences",
+        "Smooth hover effects on all interactive elements",
+        "Splash cursor and marquee animations",
+      ],
+      icon: "/assets/tool-black.webp",
+      feature: <ApproachTabsImage src="/assets/brand-images.jpg" alt="Animations" />,
+    },
+    {
+      id: 3,
+      title: "Sections & Content",
+      subtitle: "10 Custom Interactive Sections",
+      description:
+        "Designed and built 10 distinct sections — Hero, About, Experience Timeline, Projects Showcase, Tech Marquee, Coding Profiles (GitHub + LeetCode), Services, Process, Stats, and Footer — each with unique layouts.",
+      details: [
+        "Dynamic GitHub & LeetCode stats integration",
+        "Experience timeline with animated markers",
+        "Tech stack marquee with live icons",
+        "Process workflow visualization",
+      ],
+      icon: "/assets/notepad-black.webp",
+      feature: <ApproachTabsImage src="/assets/competitor-analysis.png" alt="Sections Overview" />,
+    },
+    {
+      id: 4,
+      title: "Performance & SEO",
+      subtitle: "Vercel Deployment & Optimization",
+      description:
+        "Achieved near-perfect Lighthouse scores through image optimization, lazy loading, Next.js server components, and proper meta tags for every route.",
+      details: [
+        "Next.js server components for zero client JS overhead",
+        "next/image for automatic WebP optimization",
+        "Structured metadata and Open Graph tags",
+        "Deployed on Vercel with edge CDN",
+      ],
+      icon: "/assets/search-black.webp",
+      feature: <ApproachTabsImage src="/assets/performance-metrics-automedics-web-development.webp" alt="Performance Metrics" />,
+    },
+  ],
 }
