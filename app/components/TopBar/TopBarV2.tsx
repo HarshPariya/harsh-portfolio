@@ -21,7 +21,7 @@ export const TopBarV2: React.FC = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 font-medium text-nowrap text-stone-800">
               <Image
-                src="/pie-chart.png"
+                src="/hp-logo.png"
                 alt="Harsh Pariya logo"
                 width={24}
                 height={24}

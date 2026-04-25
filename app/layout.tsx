@@ -79,9 +79,9 @@ export const metadata: Metadata = {
     canonical: DOMAIN_URL,
   },
   icons: {
-    icon: "/pie-chart.png",
-    shortcut: "/pie-chart.png",
-    apple: "/pie-chart.png",
+    icon: "/hp-logo.png",
+    shortcut: "/hp-logo.png",
+    apple: "/hp-logo.png",
   },
 }
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

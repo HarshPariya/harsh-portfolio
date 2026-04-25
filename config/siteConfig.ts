@@ -48,7 +48,7 @@ export const SITE_CONFIG = {
   ],
   ogImage: "/assets/bg-home-poster-optimized.webp",
   ogImageAlt: "Harsh Pariya - Full-Stack Developer Portfolio Hero Image",
-  logo: "/icon.png",
+  logo: "/hp-logo.png",
   authors: [{ name: "Harsh Pariya", url: DOMAIN_URL }],
   creator: "Harsh Pariya",
   publisher: "Harsh Pariya",
@@ -76,8 +76,8 @@ export const SITE_NAP = {
     x: "https://x.com/harshpariya_01",
     leetcode: "https://leetcode.com/u/harshpariya",
   } as const,
-  logo: "/icon.png",
-  favicon: "/icon.png",
+  logo: "/hp-logo.png",
+  favicon: "/hp-logo.png",
   images: ["/assets/bg-home-poster-optimized.webp"],
 } as const
 

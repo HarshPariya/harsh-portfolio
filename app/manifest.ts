@@ -14,7 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
         theme_color: "#fff",
         icons: [
             {
-                src: "/pie-chart.png",
+                src: "/hp-logo.png",
                 sizes: "512x512",
                 type: "image/png",
             },
