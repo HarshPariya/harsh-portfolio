@@ -8,14 +8,14 @@ export const MobileMenu: React.FC<{ navItems: { name: string; href: string }[] }
   const [, setMobileMenu] = useUI<"open" | "closed">("mobile-menu", "closed")
 
   return (
-    <ul className={clsx("mobile-menu-container flex flex-col gap-3 rounded-b-lg border-gray-200 px-4 transition-all duration-300 ease-in-out md:hidden")}>
+    <ul className={clsx("mobile-menu-container flex flex-col gap-3 rounded-b-lg border-[var(--beige-200)] px-4 transition-all duration-300 ease-in-out md:hidden")}>
       {navItems.map((item, index) => (
         <li
           key={item.name}
           className="mobile-menu-item transform text-lg transition-all duration-300 ease-in-out"
           style={{ "--index": index } as React.CSSProperties}
         >
-          <Link href={item.href} onClick={() => setMobileMenu("closed")} className="block pt-4 font-medium">
+          <Link href={item.href} onClick={() => setMobileMenu("closed")} className="block pt-4 font-medium text-stone-700">
             {item.name}
           </Link>
         </li>
@@ -25,7 +25,7 @@ export const MobileMenu: React.FC<{ navItems: { name: string; href: string }[] }
           href="/resume.pdf"
           download
           onClick={() => setMobileMenu("closed")}
-          className="bubble-hover block rounded-full border border-orange-100 bg-gradient-to-br from-orange-50 to-amber-50 px-3 py-2 text-center font-semibold text-orange-600 shadow-lg duration-300 hover:shadow-orange-200/50"
+          className="bubble-hover block rounded-full border border-[var(--beige-300)] bg-gradient-to-br from-[var(--beige-400)] to-[var(--beige-500)] px-3 py-2 text-center font-semibold text-white shadow-lg duration-300 hover:shadow-[var(--beige-200)]/50"
         >
           Resume
         </Link>
@@ -34,7 +34,7 @@ export const MobileMenu: React.FC<{ navItems: { name: string; href: string }[] }
         <Link
           href={SITE_SLUGS.contact}
           onClick={() => setMobileMenu("closed")}
-          className="bubble-hover block rounded-full border border-gray-200 bg-white px-3 py-2 text-center font-medium shadow-lg duration-300 hover:border-white"
+          className="bubble-hover block rounded-full border border-[var(--beige-200)] bg-white px-3 py-2 text-center font-medium text-stone-700 shadow-lg duration-300 hover:border-[var(--beige-300)]"
         >
           Contact
         </Link>

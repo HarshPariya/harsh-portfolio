@@ -38,7 +38,7 @@ export const VideoModal = ({ isOpen, onClose, videoId }: VideoModalProps) => {
                     className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white transition-colors hover:bg-black/70 focus:outline-none"
                     aria-label="Close modal"
                 >
-                    <Icon name="x" className="h-6 w-6 text-slate-100" />
+                    <Icon name="x" className="h-6 w-6 text-white" />
                 </button>
 
                 <div className="aspect-video w-full">

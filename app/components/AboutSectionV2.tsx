@@ -6,16 +6,19 @@ import { Text, Typography } from "../ui/Elements"
 import { AnimatedH2 } from "./ui/AnimatedH2"
 import { ImageReveal } from "./ImageReveal"
 import { MotionDiv } from "../utils/lazy-ui"
+import { SectionHeader } from "./SectionHeader"
 
 export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
   return (
-    <section id="about" className={clsx("border-y border-white/10 bg-slate-950/40 text-slate-100", className)}>
+    <section id="about" className={clsx("border-y border-black/15 bg-[var(--beige-100)]/40 text-stone-800", className)}>
       <div className="inside-container relative z-2">
+        <SectionHeader label="ABOUT" number="02" />
+
         {/* HEADLINE */}
-        <AnimatedH2 className="text-slate-300">
+        <AnimatedH2 className="text-stone-400">
           About
           <br />
-          <span className="text-slate-100">Harsh Pariya</span>
+          <span className="text-stone-800 italic">Harsh Pariya.</span>
         </AnimatedH2>
         <div className="flex flex-col-reverse gap-12 md:flex-row md:gap-16">
           {/* ---------------- left column ---------------- */}
@@ -31,31 +34,31 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
               whileInView={{ opacity: 1, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             >
-              <Text as="h2" size="lg" className="font-medium text-slate-50">
+              <Text as="h2" size="lg" className="font-medium text-stone-900">
                 Harsh Pariya
               </Text>
-              <p className="text-sm text-slate-400">Full-Stack Developer (MERN + Next.js)</p>
+              <p className="text-sm text-stone-500">Full-Stack Developer (MERN + Next.js)</p>
             </MotionDiv>
           </div>
           {/* ---------------- right column ---------------- */}
-          <Typography as="article" size="lg" className="[flex:1.5_0_0px] space-y-8 text-slate-300">
+          <Typography as="article" size="lg" className="[flex:1.5_0_0px] space-y-8 text-stone-600">
             <p>
-              <strong className="font-semibold text-slate-50">Passionate Developer</strong> I thrive on building impactful software. My passion for
+              <strong className="font-semibold text-stone-800">Passionate Developer</strong> I thrive on building impactful software. My passion for
               technology drives me to constantly learn, experiment, and turn ideas into functional experiences.
             </p>
 
             <p>
-              <strong className="font-semibold text-slate-50">Full-Stack Expertise</strong> Skilled in both frontend and backend, I create full-stack
+              <strong className="font-semibold text-stone-800">Full-Stack Expertise</strong> Skilled in both frontend and backend, I create full-stack
               solutions using React, Node.js, Express, and MongoDB that are clean, scalable, and efficient.
             </p>
 
             <p>
-              <strong className="font-semibold text-slate-50">Educational Background</strong> Currently pursuing B.Tech in Computer Science at Rai
+              <strong className="font-semibold text-stone-800">Educational Background</strong> Currently pursuing B.Tech in Computer Science at Rai
               University, I&apos;ve developed strong foundations in problem solving, data structures, and software engineering.
             </p>
 
             <p>
-              <strong className="font-semibold text-slate-50">Future Goals</strong> Aspiring to become a creative and technically sound Tech Architect,
+              <strong className="font-semibold text-stone-800">Future Goals</strong> Aspiring to become a creative and technically sound Tech Architect,
               leading impactful projects and empowering the developer community through mentorship.
             </p>
           </Typography>

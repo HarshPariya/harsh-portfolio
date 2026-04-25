@@ -8,6 +8,7 @@ import {
   campusNavigation,
   travelgoSite,
   quizApp,
+  portfolioNextJs,
   ProjectData,
 } from "@/app/data/project-data"
 import { notFound } from "next/navigation"
@@ -25,6 +26,7 @@ const projectsMap: Record<string, ProjectData> = {
   [campusNavigation.slug]: campusNavigation,
   [travelgoSite.slug]: travelgoSite,
   [quizApp.slug]: quizApp,
+  [portfolioNextJs.slug]: portfolioNextJs,
 }
 
 // Generate static params for all projects

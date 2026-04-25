@@ -18,7 +18,7 @@ export function ImageReveal({ className = "", ...img }: ImageRevealProps): React
         style={{
           transformOrigin: "right",
         }}
-        className="absolute inset-0 bg-slate-900"
+        className="absolute inset-0 bg-[var(--beige-300)]"
         viewport={{ once: true, margin: "0px 0px -200px 0px" }}
       />
 

@@ -1235,7 +1235,7 @@ export function SplashCursor({
     <canvas
       ref={canvasRef}
       id="fluid"
-      className="pointer-events-none fixed top-0 left-0 z-40 h-full w-full opacity-60 mix-blend-screen"
+      className="pointer-events-none fixed top-0 left-0 z-40 h-full w-full opacity-30 mix-blend-multiply"
     />
   )
 }

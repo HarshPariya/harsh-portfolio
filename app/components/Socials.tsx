@@ -3,6 +3,9 @@ import { Icon } from "./Icon"
 import clsx from "clsx"
 import type { Variants } from "motion"
 import { MotionDiv } from "../utils/lazy-ui"
+import { SiInstagram } from "react-icons/si"
+import { RiTwitterXFill } from "react-icons/ri"
+
 const container: Variants = {
   hidden: {
     x: -12,
@@ -42,39 +45,22 @@ export const Socials: React.FC<{
 }> = ({ socialLinks, className, iconClassName }) => {
   const renderIcon = (icon: string) => {
     if (icon === "instagram") {
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          height={15}
-          width={15}
-          className="text-current"
-          aria-hidden="true"
-        >
-          <rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="2" />
-          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="2" />
-          <circle cx="17" cy="7" r="1.2" fill="currentColor" />
-        </svg>
-      )
+      return <SiInstagram size={14} className="text-[#E1306C]" aria-hidden="true" />
     }
 
     if (icon === "x") {
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          height={15}
-          width={15}
-          className="text-current"
-          aria-hidden="true"
-        >
-          <path
-            d="M5 4.5L9.75 10.2 5.3 19.5h2.2L11 12.7l3.8 4.8h4.2l-5-6.1 4.2-6.9H16l-3.2 5.2L9.5 4.5H5z"
-            fill="currentColor"
-          />
-        </svg>
-      )
+      return <RiTwitterXFill size={14} className="text-stone-800" aria-hidden="true" />
     }
 
-    return <Icon name={icon} height={15} width={15} className="text-current" />
+    if (icon === "linkedin") {
+      return <Icon name={icon} height={14} width={14} className="text-[#0A66C2]" />
+    }
+
+    if (icon === "github") {
+      return <Icon name={icon} height={14} width={14} className="text-stone-800" />
+    }
+
+    return <Icon name={icon} height={14} width={14} className="text-stone-600" strokeWidth={1.2} />
   }
 
   return (

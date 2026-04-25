@@ -11,12 +11,12 @@ export const TrafficBarChart: React.FC<{ startValue: number; endValue: number }>
     {
       label: "Pre-Launch",
       value: startValue,
-      color: "bg-gradient-to-br from-slate-600 to-slate-900",
+      color: "bg-gradient-to-br from-[var(--beige-400)] to-[var(--beige-600)]",
     },
     {
       label: "Post-Launch",
       value: endValue,
-      color: "bg-gradient-to-br from-slate-500 to-slate-900",
+      color: "bg-gradient-to-br from-[var(--beige-500)] to-[var(--beige-700)]",
     },
   ]
   const maxValue = Math.max(...data.map((d) => d.value))
@@ -38,7 +38,7 @@ export const TrafficBarChart: React.FC<{ startValue: number; endValue: number }>
                 delay: 0.8 + index * 0.2,
                 ease: [0.2, 0.65, 0.3, 0.9],
               }}
-              className="mb-2 text-lg font-medium text-slate-700"
+              className="mb-2 text-lg font-medium text-stone-700"
             >
               {item.value.toLocaleString('en-US')}/mo
             </MotionDiv>
@@ -70,7 +70,7 @@ export const TrafficBarChart: React.FC<{ startValue: number; endValue: number }>
                 delay: 0.5 + index * 0.2,
                 ease: [0.2, 0.65, 0.3, 0.9],
               }}
-              className="mt-3 text-center text-xs text-nowrap text-slate-600 uppercase"
+              className="mt-3 text-center text-xs text-nowrap text-stone-500 uppercase"
             >
               {item.label}
             </MotionDiv>

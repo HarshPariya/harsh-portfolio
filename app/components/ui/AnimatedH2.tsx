@@ -45,7 +45,7 @@ export function AnimatedH2({ className = "", children }: { className?: string; c
   return (
     <MotionH2
       className={clsx(
-        "text-4xl tracking-tight text-slate-300 md:text-5xl md:leading-13 lg:text-6xl lg:leading-15 drop-shadow-[0_0_18px_rgba(15,23,42,0.85)]",
+        "text-4xl tracking-tight text-stone-400 md:text-5xl md:leading-13 lg:text-6xl lg:leading-15",
         className,
       )}
       variants={container}

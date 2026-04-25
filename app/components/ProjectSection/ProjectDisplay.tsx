@@ -14,7 +14,7 @@ const ProjectDisplay: React.FC<{ projectData: ProjectData }> = ({ projectData })
       <ProjectHero {...projectData.hero} />
       {projectData.projectImage && (
         <section className="inside-container-large mt-12 mb-20 lg:mb-32">
-          <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-slate-900">
+          <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-[var(--beige-100)]">
             <Image
               src={projectData.projectImage}
               alt={`${projectData.hero.client} Project Image`}

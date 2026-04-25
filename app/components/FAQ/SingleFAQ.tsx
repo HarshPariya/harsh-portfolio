@@ -20,7 +20,7 @@ export const SingleFAQ = ({ question, answer, index }: FAQ) => {
           // transition={{ duration: 0.2, ease: "easeOut" }}
           className="faq-open:-translate-x-7.5 flex items-center gap-4 overflow-hidden duration-200 ease-out will-change-transform"
         >
-          <span className="faq-open:opacity-0 text-slate-500 duration-200 ease-out">0{index + 1}</span>
+          <span className="faq-open:opacity-0 text-stone-400 duration-200 ease-out">0{index + 1}</span>
           <h3 className="font-medium">{question}</h3>
         </div>
 

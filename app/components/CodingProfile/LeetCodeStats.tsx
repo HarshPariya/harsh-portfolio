@@ -53,8 +53,8 @@ const CSSDonut = ({ easy, medium, hard, total }: { easy: number, medium: number,
                 }}
             />
             <div className="z-10 flex flex-col items-center">
-                <span className="text-3xl font-extrabold text-slate-100">{total}</span>
-                <span className="text-xs font-medium text-slate-400">Solved</span>
+                <span className="text-3xl font-extrabold text-stone-800">{total}</span>
+                <span className="text-xs font-medium text-stone-500">Solved</span>
             </div>
         </div>
     )
@@ -228,7 +228,7 @@ export const LeetCodeStats = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 p-8 shadow-xl transition-all hover:shadow-2xl"
+            className="group relative overflow-hidden rounded-3xl border border-[var(--beige-200)] bg-white/80 p-8 shadow-sm transition-all hover:shadow-md"
         >
             <div className="relative z-10 flex flex-col gap-8">
                 {/* Header */}
@@ -246,14 +246,14 @@ export const LeetCodeStats = () => {
                             </div>
                         </div>
                         <div>
-                            <h3 className="text-2xl font-bold text-slate-100">LeetCode</h3>
-                            <p className="text-sm font-medium text-slate-400">Global Ranking: {stats.ranking.toLocaleString('en-US')}</p>
+                            <h3 className="text-2xl font-bold text-stone-800">LeetCode</h3>
+                            <p className="text-sm font-medium text-stone-500">Global Ranking: {stats.ranking.toLocaleString('en-US')}</p>
                         </div>
                     </div>
                     <Link
                         href={SITE_NAP.profiles.leetcode}
                         target="_blank"
-                        className="hidden rounded-full border border-emerald-400/40 bg-transparent px-5 py-2 text-sm font-medium text-slate-100 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-emerald-400/10 sm:block"
+                        className="hidden rounded-full border border-[var(--beige-300)]/50 bg-transparent px-5 py-2 text-sm font-medium text-stone-700 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-[var(--beige-100)] sm:block"
                     >
                         View Profile
                     </Link>
@@ -262,26 +262,26 @@ export const LeetCodeStats = () => {
                 {/* Main Stats Area: Solved + Breakdown */}
                 <div className="flex flex-col gap-8 lg:flex-row">
                     {/* Left Col: Donut Chart */}
-                    <div className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-slate-900/80 p-6 lg:w-1/3">
+                    <div className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-[var(--beige-50)] p-6 lg:w-1/3">
                         <CSSDonut easy={stats.easySolved} medium={stats.mediumSolved} hard={stats.hardSolved} total={stats.totalSolved} />
-                        <div className="text-sm text-slate-400">{stats.totalSolved} / {stats.totalQuestions} Solved</div>
+                        <div className="text-sm text-stone-500">{stats.totalSolved} / {stats.totalQuestions} Solved</div>
                     </div>
 
                     {/* Right Col: Breakdown & Contest */}
                     <div className="flex flex-1 flex-col gap-4">
                         {/* Solved Breakdown */}
                         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                            <div className="group/stat flex flex-col items-center justify-center rounded-xl bg-slate-900/80 p-3 transition-colors hover:bg-emerald-500/10">
-                                <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-400 group-hover/stat:text-emerald-300">Easy</span>
-                                <span className="text-xl font-bold text-slate-100 group-hover/stat:text-emerald-200">{stats.easySolved}</span>
+                            <div className="group/stat flex flex-col items-center justify-center rounded-xl bg-[var(--beige-50)] p-3 transition-colors hover:bg-emerald-500/10">
+                                <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-stone-500 group-hover/stat:text-emerald-600">Easy</span>
+                                <span className="text-xl font-bold text-stone-800 group-hover/stat:text-emerald-700">{stats.easySolved}</span>
                             </div>
-                            <div className="group/stat flex flex-col items-center justify-center rounded-xl bg-slate-900/80 p-3 transition-colors hover:bg-yellow-500/10">
-                                <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-400 group-hover/stat:text-yellow-300">Medium</span>
-                                <span className="text-xl font-bold text-slate-100 group-hover/stat:text-yellow-200">{stats.mediumSolved}</span>
+                            <div className="group/stat flex flex-col items-center justify-center rounded-xl bg-[var(--beige-50)] p-3 transition-colors hover:bg-yellow-500/10">
+                                <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-stone-500 group-hover/stat:text-yellow-600">Medium</span>
+                                <span className="text-xl font-bold text-stone-800 group-hover/stat:text-yellow-700">{stats.mediumSolved}</span>
                             </div>
-                            <div className="group/stat flex flex-col items-center justify-center rounded-xl bg-slate-900/80 p-3 transition-colors hover:bg-red-500/10">
-                                <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-400 group-hover/stat:text-red-300">Hard</span>
-                                <span className="text-xl font-bold text-slate-100 group-hover/stat:text-red-200">{stats.hardSolved}</span>
+                            <div className="group/stat flex flex-col items-center justify-center rounded-xl bg-[var(--beige-50)] p-3 transition-colors hover:bg-red-500/10">
+                                <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-stone-500 group-hover/stat:text-red-600">Hard</span>
+                                <span className="text-xl font-bold text-stone-800 group-hover/stat:text-red-600">{stats.hardSolved}</span>
                             </div>
                         </div>
 
@@ -292,7 +292,7 @@ export const LeetCodeStats = () => {
                                     <div className="flex flex-col">
                                         <span className="text-xs font-bold uppercase tracking-wider text-amber-300">Contest Rating</span>
                                         <div className="flex items-baseline gap-2">
-                                            <span className="text-2xl font-black text-slate-100">{Math.round(contestStats.contestRating)}</span>
+                                            <span className="text-2xl font-black text-stone-800">{Math.round(contestStats.contestRating)}</span>
                                             {contestStats.contestTopPercentage && (
                                                 <span className="text-xs font-medium text-amber-100 bg-amber-600/40 px-2 py-0.5 rounded-full">
                                                     Top {contestStats.contestTopPercentage}%
@@ -301,9 +301,9 @@ export const LeetCodeStats = () => {
                                         </div>
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-xs text-slate-400">Global Rank</div>
-                                        <div className="font-bold text-slate-100">#{contestStats.contestGlobalRanking.toLocaleString('en-US')}</div>
-                                        <div className="text-[10px] text-slate-400">Attended: {contestStats.contestAttend}</div>
+                                        <div className="text-xs text-stone-500">Global Rank</div>
+                                        <div className="font-bold text-stone-800">#{contestStats.contestGlobalRanking.toLocaleString('en-US')}</div>
+                                        <div className="text-[10px] text-stone-500">Attended: {contestStats.contestAttend}</div>
                                     </div>
                                 </div>
                             </div>
@@ -313,7 +313,7 @@ export const LeetCodeStats = () => {
 
                 {/* Submission Heatmap */}
                 <div className="mt-2">
-                    <p className="mb-4 text-sm font-semibold text-slate-100">Submission History</p>
+                    <p className="mb-4 text-sm font-semibold text-stone-800">Submission History</p>
                     <div className="overflow-x-auto pb-2 scrollbar-hide">
                         <div className="min-w-[600px]">
                             <ActivityCalendar

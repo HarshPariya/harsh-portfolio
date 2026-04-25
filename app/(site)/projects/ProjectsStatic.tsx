@@ -4,6 +4,7 @@ import squidaiImage from "@/public/assets/SquidAI.png"
 import campusNavImage from "@/public/assets/Campus-nav.png"
 import travelGoImage from "@/public/assets/TravelGo.png"
 import quizImage from "@/public/assets/Quiz.png"
+import portfolioNextJsImage from "@/public/assets/Portfolio-NextJs.png"
 import { Link } from "@/app/utils/Link"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
@@ -74,11 +75,24 @@ export const STATIC_PROJECTS: StaticProject[] = [
     ariaLabel: "View Quiz App on GitHub",
     isExternal: true,
   },
+  {
+    id: "portfolio-nextjs",
+    src: portfolioNextJsImage,
+    alt: "Portfolio Next.js Preview",
+    color: "#1E3A5F",
+    type: "Portfolio Website",
+    text: "View on GitHub",
+    title: "Portfolio (Next.js)",
+    href: "https://portfolio-by-harshp.netlify.app/",
+    githubUrl: "https://github.com/HarshPariya/Portfolio_NextJs.git",
+    ariaLabel: "View Portfolio Next.js on GitHub",
+    isExternal: true,
+  },
 ]
 
 export const ProjectsStatic: React.FC = () => {
   return (
-    <section className="border-t border-slate-200">
+    <section className="border-t border-black/15">
       <div className="inside-container-small">
         <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
           {STATIC_PROJECTS.map((project) => {

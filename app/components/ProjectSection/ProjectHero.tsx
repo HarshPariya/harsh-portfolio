@@ -9,20 +9,20 @@ export const ProjectHero: React.FC<ProjectHeroProps> = ({ title, client, year, d
       <H1 variant="medium" className="wrap-break-word">
         {title}
       </H1>
-      <Typography as="div" size="xs" className="flex gap-4 text-sm text-slate-300">
+      <Typography as="div" size="xs" className="flex gap-4 text-sm text-stone-500">
         <div className="flex gap-2">
           <span>Client</span>
-          <span className="font-medium text-slate-100">{client}</span>
+          <span className="font-medium text-stone-800">{client}</span>
         </div>
         <div className="flex gap-2">
           <span>Year</span>
-          <span className="font-medium text-slate-100">{year}</span>
+          <span className="font-medium text-stone-800">{year}</span>
         </div>
       </Typography>
-      <Typography as="p" size="sm" className="leading-normal text-slate-300">
+      <Typography as="p" size="sm" className="leading-normal text-stone-600">
         {description}
       </Typography>
-      <Typography as="div" size="xs" className="flex flex-col gap-2 leading-normal text-slate-300">
+      <Typography as="div" size="xs" className="flex flex-col gap-2 leading-normal text-stone-600">
         <p className="font-medium">Scope of Work</p>
         <ul className="flex flex-wrap gap-2 text-xs font-medium text-slate-800">
           {categories.map((item) => (
@@ -37,20 +37,20 @@ export const ProjectHero: React.FC<ProjectHeroProps> = ({ title, client, year, d
           href={link}
           title={`View ${client} live site`}
           target="_blank"
-          className="underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-slate-100"
+          className="underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-stone-800"
         >
           View Live Site
-          <Icon name="arrow-right" className="h-3 w-3 text-slate-100" />
+          <Icon name="arrow-right" className="h-3 w-3 text-stone-800" />
         </Link>
         {githubLink && (
           <Link
             href={githubLink}
             title={`View ${client} code`}
             target="_blank"
-            className="underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-slate-100"
+            className="underline-hover flex w-fit items-center gap-1 text-lg text-nowrap text-stone-800"
           >
             View Code
-            <Icon name="github" className="h-3 w-3 text-slate-100" />
+            <Icon name="github" className="h-3 w-3 text-stone-800" />
           </Link>
         )}
       </div>

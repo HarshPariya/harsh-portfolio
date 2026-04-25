@@ -17,6 +17,7 @@ import apiHubHero from "@/public/assets/SquidAI.png"
 import numbleHero from "@/public/assets/Campus-nav.png"
 import slippyHero from "@/public/assets/TravelGo.png"
 import hrmsHero from "@/public/assets/Quiz.png"
+import portfolioNextJsHero from "@/public/assets/Portfolio-NextJs.png"
 import { ApproachTabsImage } from "../components/ProjectSection/ApproachTabsImage"
 
 //   interface ProjectData {
@@ -380,7 +381,7 @@ export const iao: ProjectData = {
       description: "We created a live incident data dashboard that displays incidents in real-time, connected to a live incident data API.",
       details: ["Airtable API integration for incident data", "Displays incidents in real-time"],
       icon: "/assets/tool-black.webp",
-      feature: <ApproachTabsImage src="/assets/iron-and-oak-website-tool.png" alt="Iron & Oak Website Tool" className="bg-slate-800 px-2.5" />,
+      feature: <ApproachTabsImage src="/assets/iron-and-oak-website-tool.png" alt="Iron & Oak Website Tool" className="bg-[var(--beige-200)] px-2.5" />,
     },
     {
       id: 3,
@@ -395,7 +396,7 @@ export const iao: ProjectData = {
       ],
       icon: "/assets/assets-black-camera.webp",
       feature: (
-        <ApproachTabsImage src="/assets/iron-and-oak-media-coverage-website-research.png" alt="Iron & Oak Media Coverage" className="bg-slate-200 px-2.5" />
+        <ApproachTabsImage src="/assets/iron-and-oak-media-coverage-website-research.png" alt="Iron & Oak Media Coverage" className="bg-[var(--beige-100)] px-2.5" />
       ),
     },
     {
@@ -488,7 +489,7 @@ export const apihub: ProjectData = {
         <ApproachTabsImage
           src="/assets/iron-and-oak-website-tool.png"
           alt="Developer UI"
-          className="bg-slate-800 px-2.5"
+          className="bg-[var(--beige-200)] px-2.5"
         />
       ),
     },
@@ -681,7 +682,7 @@ export const squidai: ProjectData = {
   hero: {
     title: "SquidAI - AI Technical Assistant",
     client: "Personal Project",
-    year: "2024",
+    year: "2026",
     description:
       "SquidAI is an AI-powered technical assistant that helps developers generate, explain, and refactor code faster. It focuses on practical use-cases like debugging help and boilerplate generation.",
     categories: ["AI", "Full Stack", "React", "Node"],
@@ -705,10 +706,10 @@ export const campusNavigation: ProjectData = {
   hero: {
     title: "Campus Navigation System",
     client: "Personal Project",
-    year: "2024",
+    year: "2025",
     description:
       "An interactive campus navigation system that lets students and visitors find buildings, routes, and key locations on campus using an intuitive web interface.",
-    categories: ["React", "Maps", "Frontend", "Typescript", "Backend" , "Tailwind CSS"],
+    categories: ["React", "Maps", "Frontend", "Typescript", "Backend", "Tailwind CSS"],
     link: "https://campus-navigation-sigma.vercel.app/",
     githubLink: "https://github.com/HarshPariya/Campus_Navigation_Frontend",
   },
@@ -729,7 +730,7 @@ export const travelgoSite: ProjectData = {
   hero: {
     title: "TravelGo - Travel Agency Website",
     client: "Personal Project",
-    year: "2024",
+    year: "2025",
     description:
       "TravelGo is a responsive travel agency website that showcases destinations, packages, and CTAs with a focus on clean layout and conversion-friendly UI.",
     categories: ["React", "Landing Page", "Frontend", "Tailwind CSS"],
@@ -767,6 +768,30 @@ export const quizApp: ProjectData = {
     beforeAltText: "Quiz App Desktop",
     beforeMobileAltText: "Quiz App Mobile",
     afterAltText: "Quiz App Question Screen",
+  },
+  results: [],
+  phases: [],
+}
+
+export const portfolioNextJs: ProjectData = {
+  projectImage: portfolioNextJsHero,
+  hero: {
+    title: "Portfolio Website - Next.js",
+    client: "Personal Project",
+    year: "2025",
+    description:
+      "A modern, responsive portfolio website built with Next.js featuring a stunning dark-space themed design, animated hero section, interactive project showcases, and seamless navigation. Demonstrates full-stack frontend skills with React, Next.js, and polished UI/UX.",
+    categories: ["Next.js", "React", "Portfolio", "Frontend", "CSS"],
+    link: "https://portfolio-by-harshp.netlify.app/",
+    githubLink: "https://github.com/HarshPariya/Portfolio_NextJs.git",
+  },
+  slug: "portfolio-nextjs",
+  beforeAfter: {
+    heroBefore: portfolioNextJsHero,
+    heroBeforeMobile: portfolioNextJsHero,
+    beforeAltText: "Portfolio Next.js Desktop",
+    beforeMobileAltText: "Portfolio Next.js Mobile",
+    afterAltText: "Portfolio Next.js Interface",
   },
   results: [],
   phases: [],

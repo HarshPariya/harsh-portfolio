@@ -16,7 +16,7 @@ export const HeaderText: React.FC<HeaderTextProps> = ({ title, titleHighlight, d
         {titleHighlight && (
           <>
             <br />
-            <span className="text-slate-500">{titleHighlight}</span>
+            <span className="text-stone-400">{titleHighlight}</span>
           </>
         )}
       </AnimatedH2>

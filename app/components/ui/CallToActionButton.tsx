@@ -66,9 +66,9 @@ export const CallToActionButton = () => {
         animate="animate"
         whileHover="hover"
         variants={buttonVariants}
-        className="group bubble-hover-cta active relative z-1 inline-flex w-max items-center gap-2 rounded-full bg-black px-3 py-2.5 text-base font-medium tracking-tight text-white shadow-xl shadow-black/20"
+        className="group bubble-hover-cta active relative z-1 inline-flex w-max items-center gap-2 rounded-full bg-stone-900 px-3 py-2.5 text-base font-medium tracking-tight text-white shadow-md shadow-stone-900/10"
       >
-        <div className="pointer-events-none absolute inset-0.5 -z-1 rounded-full [background-image:url('/assets/framer-noise.png')] [background-size:164px] bg-repeat opacity-12" />
+        <div className="pointer-events-none absolute inset-0.5 -z-1 rounded-full [background-image:url('/assets/framer-noise.png')] [background-size:164px] bg-repeat opacity-8" />
         <div className="relative flex items-center gap-1">
           {/* Avatar */}
           <div className="relative h-7 w-7 rounded-full">
@@ -80,7 +80,7 @@ export const CallToActionButton = () => {
             <span className="text-xl">+</span>
             <Icon
               name="github"
-              className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-slate-100 ring-1 ring-emerald-400/60"
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-stone-800 text-sm font-semibold text-white ring-1 ring-[var(--beige-400)]/60"
             />
           </MotionDiv>
         </div>

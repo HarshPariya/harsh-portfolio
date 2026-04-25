@@ -3,6 +3,10 @@ import { ProjectsSection } from "../components/ProjectsSection"
 import { AboutSectionV2 } from "../components/AboutSectionV2"
 import { ServicesSectionV2 } from "../components/ServicesSectionV2"
 import { RecruiterContact } from "../components/RecruiterContact"
+import { TechMarquee } from "../components/TechMarquee"
+import { StatsSection } from "../components/StatsSection"
+import { ProcessSection } from "../components/ProcessSection"
+import { ScrollTextReveal } from "../components/ScrollTextReveal"
 import { Metadata } from "next"
 import { SITE_CONFIG, SITE_SLUGS } from "@/config/siteConfig"
 import { homeGraph } from "@/config/schemas"
@@ -16,7 +20,7 @@ export const metadata: Metadata = {
 
 const PortfolioPage: React.FC = () => {
   return (
-    <main className="overflow-hidden text-slate-100">
+    <main className="overflow-hidden text-stone-800">
       <Script
         id="id-site-schema"
         type="application/ld+json"
@@ -25,10 +29,13 @@ const PortfolioPage: React.FC = () => {
         }}
       />
       <HeroV2 />
-      <div className="border-b border-gray-200" />
       <ProjectsSection />
       <AboutSectionV2 />
+      <ProcessSection />
       <ServicesSectionV2 />
+      <TechMarquee />
+      <StatsSection />
+      <ScrollTextReveal />
       <RecruiterContact />
       {/* <FAQSection /> */}
     </main>

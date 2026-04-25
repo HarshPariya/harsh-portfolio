@@ -97,9 +97,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <DesktopCursor />
           <ViewTransitions />
           <LazySplashCursor />
-          <div className="custom:mx-auto xxs:mx-3.5 pointer-events-none absolute inset-0 z-1 max-w-6xl [background-image:url('/assets/framer-noise.png')] [background-size:128px] bg-repeat opacity-6 md:mx-5 lg:mx-8" />
+          <div className="custom:mx-auto xxs:mx-3.5 pointer-events-none absolute inset-0 z-1 max-w-6xl [background-image:url('/assets/framer-noise.png')] [background-size:128px] bg-repeat opacity-3 md:mx-5 lg:mx-8" />
           <div className={`${switzer.variable} font-switzer subpixel-antialiased`}>
-            <div className="custom:mx-auto xxs:border-x pointer-events-none absolute inset-0 z-0 mx-3.5 max-w-6xl border-gray-200 md:mx-5 lg:mx-8" />
+            <div className="custom:mx-auto xxs:border-x pointer-events-none absolute inset-0 z-0 mx-3.5 max-w-6xl border-black/15 md:mx-5 lg:mx-8" />
             <BottomBlurOverlay />
             <TopBarV2 />
             {children}

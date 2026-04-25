@@ -86,11 +86,11 @@ export const LineChart: React.FC = () => {
         ))}
 
         {/* Phase labels */}
-        <text x="70" y="470" textAnchor="middle" className="fill-slate-600 text-xl uppercase">
+        <text x="70" y="470" textAnchor="middle" className="fill-stone-500 text-xl uppercase">
           Pre-Launch
         </text>
 
-        <text x="375" y="470" textAnchor="middle" className="fill-slate-600 text-xl uppercase">
+        <text x="375" y="470" textAnchor="middle" className="fill-stone-500 text-xl uppercase">
           Post-Launch
         </text>
       </MotionSvg>
