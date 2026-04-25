@@ -18,6 +18,7 @@ import numbleHero from "@/public/assets/Campus-nav.png"
 import slippyHero from "@/public/assets/TravelGo.png"
 import hrmsHero from "@/public/assets/Quiz.png"
 import portfolioNextJsHero from "@/public/assets/Portfolio-NextJs.png"
+import folioHarshDevHero from "@/public/assets/FolioHarshDev.png"
 import { ApproachTabsImage } from "../components/ProjectSection/ApproachTabsImage"
 
 //   interface ProjectData {
@@ -798,7 +799,7 @@ export const portfolioNextJs: ProjectData = {
 }
 
 export const harshPortfolioV2: ProjectData = {
-  projectImage: portfolioNextJsHero,
+  projectImage: folioHarshDevHero,
   hero: {
     title: "Folio Harsh Dev — Portfolio v2",
     client: "Personal Project",
@@ -811,8 +812,8 @@ export const harshPortfolioV2: ProjectData = {
   },
   slug: "harsh-portfolio-v2",
   beforeAfter: {
-    heroBefore: portfolioNextJsHero,
-    heroBeforeMobile: portfolioNextJsHero,
+    heroBefore: folioHarshDevHero,
+    heroBeforeMobile: folioHarshDevHero,
     iframe: "https://folioharshdev.vercel.app/",
     beforeAltText: "Folio Harsh Dev Portfolio v2 Desktop",
     beforeMobileAltText: "Folio Harsh Dev Portfolio v2 Mobile",

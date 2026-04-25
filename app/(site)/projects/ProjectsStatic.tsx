@@ -5,6 +5,7 @@ import campusNavImage from "@/public/assets/Campus-nav.png"
 import travelGoImage from "@/public/assets/TravelGo.png"
 import quizImage from "@/public/assets/Quiz.png"
 import portfolioNextJsImage from "@/public/assets/Portfolio-NextJs.png"
+import folioHarshDevImage from "@/public/assets/FolioHarshDev.png"
 import { Link } from "@/app/utils/Link"
 import { externalLinks, SITE_SLUGS } from "@/config/siteConfig"
 
@@ -90,7 +91,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
   },
   {
     id: "harsh-portfolio-v2",
-    src: portfolioNextJsImage,
+    src: folioHarshDevImage,
     alt: "Folio Harsh Dev — Portfolio v2 Preview",
     color: "#7C3AED",
     type: "Portfolio v2 — Vercel",
