@@ -782,8 +782,8 @@ export const portfolioNextJs: ProjectData = {
     description:
       "A modern, responsive portfolio website built with Next.js featuring a stunning dark-space themed design, animated hero section, interactive project showcases, and seamless navigation. Demonstrates full-stack frontend skills with React, Next.js, and polished UI/UX.",
     categories: ["Next.js", "React", "Portfolio", "Frontend", "CSS"],
-    link: "https://portfolio-by-harshp.netlify.app/",
-    githubLink: "https://github.com/HarshPariya/Portfolio_NextJs.git",
+    link: "https://folioharshdev.vercel.app/",
+    githubLink: "https://github.com/HarshPariya/harsh-portfolio.git",
   },
   slug: "portfolio-nextjs",
   beforeAfter: {
