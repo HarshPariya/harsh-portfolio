@@ -7,6 +7,9 @@ import { TechMarquee } from "../components/TechMarquee"
 import { StatsSection } from "../components/StatsSection"
 import { ProcessSection } from "../components/ProcessSection"
 import { ScrollTextReveal } from "../components/ScrollTextReveal"
+import { TestimonialsSection } from "../components/TestimonialsSection"
+import { EducationSection } from "../components/EducationSection"
+import { WhyHireMeSection } from "../components/WhyHireMeSection"
 import { Metadata } from "next"
 import { SITE_CONFIG, SITE_SLUGS } from "@/config/siteConfig"
 import { homeGraph } from "@/config/schemas"
@@ -35,9 +38,11 @@ const PortfolioPage: React.FC = () => {
       <ServicesSectionV2 />
       <TechMarquee />
       <StatsSection />
+      <TestimonialsSection />
+      <EducationSection />
       <ScrollTextReveal />
+      <WhyHireMeSection />
       <RecruiterContact />
-      {/* <FAQSection /> */}
     </main>
   )
 }
