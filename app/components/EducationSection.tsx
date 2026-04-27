@@ -16,7 +16,7 @@ interface TimelineItem {
 
 const timelineData: TimelineItem[] = [
   {
-    date: "2023 — Present",
+    date: "2024 — Present",
     title: "B.Tech in Computer Science & Engineering",
     institution: "Rai University, Gujarat",
     description:
