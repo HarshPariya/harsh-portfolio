@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
   {
     quote:
       "Harsh has a rare combination of strong technical fundamentals and creative problem-solving. His projects consistently demonstrate a deep understanding of modern web architecture and user-centric design thinking.",
-    name: "Prof. Mentor",
+    name: "Prof. Pawan Shah",
     role: "Faculty Advisor",
     company: "Rai University",
     initials: "RU",
@@ -192,11 +192,10 @@ export const TestimonialsSection = () => {
               <button
                 key={i}
                 onClick={() => setPage([i, i > currentIndex ? 1 : -1])}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  i === currentIndex
+                className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex
                     ? "w-8 bg-[var(--beige-500)]"
                     : "w-2 bg-stone-300 hover:bg-stone-400"
-                }`}
+                  }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
             ))}
