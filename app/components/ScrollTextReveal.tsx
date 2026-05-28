@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { useScroll, useTransform } from "motion/react"
+import { useScroll, useTransform } from "framer-motion"
 import { MotionDiv, MotionSpan } from "../utils/lazy-ui"
 
 const words = [

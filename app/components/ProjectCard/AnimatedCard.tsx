@@ -1,5 +1,5 @@
 "use client"
-import { MotionValue } from "motion/react"
+import type { MotionValue } from "framer-motion"
 import { StaticImageData } from "next/image"
 import { Card } from "./Card"
 import clsx from "clsx"

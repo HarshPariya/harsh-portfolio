@@ -1,4 +1,4 @@
-import { MotionValue } from "motion/react"
+import type { MotionValue } from "framer-motion"
 import { type RefObject } from "react"
 import { useIsoMorphicEffect } from "./useIsoMorphicEffect"
 

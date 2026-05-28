@@ -1,7 +1,7 @@
 "use client"
 import { useRef, useCallback, memo, useState, useEffect } from "react"
 import { MotionDiv } from "@/app/utils/lazy-ui"
-import { useMotionValue, useSpring, useTransform, useInView } from "motion/react"
+import { useMotionValue, useSpring, useTransform, useInView } from "framer-motion"
 
 interface BeforeAfterProps {
   before: React.ReactNode
@@ -124,7 +124,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterProps> = memo(
           springPosition.set(initialPosition)
         }, 600)
       }
-    }, [isInView])
+    }, [initialPosition, isInView, springPosition])
 
     return (
       <div

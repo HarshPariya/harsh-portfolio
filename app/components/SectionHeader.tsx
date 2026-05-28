@@ -1,7 +1,7 @@
 "use client"
 
 import { MotionDiv } from "../utils/lazy-ui"
-import type { Variants } from "motion"
+import type { Variants } from "framer-motion"
 
 interface SectionHeaderProps {
   label: string

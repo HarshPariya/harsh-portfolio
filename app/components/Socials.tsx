@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Icon } from "./Icon"
 import clsx from "clsx"
-import type { Variants } from "motion"
+import type { Variants } from "framer-motion"
 import { MotionDiv } from "../utils/lazy-ui"
 import { SiInstagram } from "react-icons/si"
 import { RiTwitterXFill } from "react-icons/ri"

@@ -1,7 +1,6 @@
 "use client"
 import clsx from "clsx"
-import { useMotionValueEvent } from "motion/react"
-import { useScroll } from "motion/react"
+import { useMotionValueEvent, useScroll } from "framer-motion"
 import { useIsMobile, useTouch } from "../../hooks/useMediaQuery"
 import { DotMenuIcon } from "./DotMenuIcon"
 import { useUI } from "@react-zero-ui/core"

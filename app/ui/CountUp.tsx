@@ -1,5 +1,5 @@
 "use client"
-import { useMotionValue, useTransform, animate } from "motion/react"
+import { useMotionValue, useTransform, animate } from "framer-motion"
 import { MotionSpan } from "../utils/lazy-ui"
 
 interface CountUpProps {

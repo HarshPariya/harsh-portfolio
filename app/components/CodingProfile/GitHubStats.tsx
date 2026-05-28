@@ -166,9 +166,9 @@ export const GitHubStats = () => {
                                 fontSize={12}
                                 blockSize={12}
                                 blockMargin={4}
-                                style={{ color: "#5c4633" }}
                                 theme={{
-                                    light: ["#f5ebe0", "#e8d5c0", "#d4b896", "#b08968", "#7c5e43"],
+                                    // GitHub's official light palette (keeps it familiar/recognizable)
+                                    light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
                                     dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
                                 }}
                             />

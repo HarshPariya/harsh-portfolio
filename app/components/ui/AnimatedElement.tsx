@@ -1,4 +1,4 @@
-import { MotionProps } from "motion/react"
+import type { MotionProps } from "framer-motion"
 import { ReactNode, ElementType } from "react"
 import { MotionDiv, MotionH1, MotionH2, MotionP, MotionSpan } from "@/app/utils/lazy-ui"
 

@@ -8,7 +8,7 @@ import clsx from "clsx"
 import { useOffset } from "../hooks/useOffset"
 import { useIsMobile } from "../hooks/useMediaQuery"
 import { useRef, useEffect } from "react"
-import { useScroll, useSpring } from "motion/react"
+import { useScroll, useSpring } from "framer-motion"
 import { useUI } from "@react-zero-ui/core"
 import { externalLinks } from "@/config/siteConfig"
 

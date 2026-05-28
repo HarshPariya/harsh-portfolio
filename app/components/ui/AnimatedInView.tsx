@@ -1,5 +1,5 @@
 import { MotionH1, MotionH2, MotionP, MotionDiv, MotionSpan, MotionArticle } from "@/app/utils/lazy-ui"
-import { MotionProps } from "motion/react"
+import type { MotionProps } from "framer-motion"
 import { ElementType, ReactNode } from "react"
 
 export interface AnimatedInViewProps<T extends ElementType> extends MotionProps {

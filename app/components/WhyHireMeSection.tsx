@@ -1,7 +1,7 @@
 "use client"
 
 import { MotionDiv } from "../utils/lazy-ui"
-import type { Variants } from "motion"
+import type { Variants } from "framer-motion"
 import { SectionHeader } from "./SectionHeader"
 import { AnimatedH2 } from "./ui/AnimatedH2"
 import { BlackButtonLink } from "./ui/BlackButtonLink"

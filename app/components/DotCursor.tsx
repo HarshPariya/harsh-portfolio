@@ -1,7 +1,7 @@
 // app/_components/DotCursor.tsx
 "use client"
 import { useEffect, useRef } from "react"
-import { frame, useSpring } from "motion/react"
+import { useSpring } from "framer-motion"
 import { MotionDiv, MotionSpan } from "../utils/lazy-ui"
 
 const BASE_W = 20
@@ -25,10 +25,8 @@ export function DotCursor() {
   useEffect(() => {
     const onMove = (ev: PointerEvent) => {
       const { clientX, clientY } = ev
-      frame.read(() => {
-        x.set(clientX)
-        y.set(clientY)
-      })
+      x.set(clientX)
+      y.set(clientY)
 
       const el = (ev.target as Element | null)?.closest?.<HTMLElement>("[data-text]") ?? null
       if (el === lastTargetRef.current) return
@@ -39,11 +37,9 @@ export function DotCursor() {
 
       if (!el || !text) {
         if (span) span.textContent = ""
-        frame.read(() => {
-          w.set(BASE_W)
-          h.set(BASE_H)
-          labelOpacity.set(0)
-        })
+        w.set(BASE_W)
+        h.set(BASE_H)
+        labelOpacity.set(0)
         return
       }
 
@@ -54,23 +50,19 @@ export function DotCursor() {
         const textW = Math.ceil(span.scrollWidth)
         const targetW = Math.min(Math.max(BASE_W, textW + PAD_X * 2), MAX_W)
 
-        frame.read(() => {
-          w.set(targetW)
-          h.set(HOVER_H)
-        })
+        w.set(targetW)
+        h.set(HOVER_H)
         // fade text after width begins expanding
-        frame.update(() => labelOpacity.set(1))
+        labelOpacity.set(1)
       }
     }
 
     const onLeaveWindow = () => {
       lastTargetRef.current = null
       if (labelRef.current) labelRef.current.textContent = ""
-      frame.read(() => {
-        w.set(BASE_W)
-        h.set(BASE_H)
-        labelOpacity.set(0)
-      })
+      w.set(BASE_W)
+      h.set(BASE_H)
+      labelOpacity.set(0)
     }
 
     window.addEventListener("pointermove", onMove, { passive: true })

@@ -2,7 +2,7 @@ import clsx from "clsx"
 import { Icon } from "./Icon"
 import { Text } from "../ui/Elements"
 import { AnimatedH2 } from "./ui/AnimatedH2"
-import type { Variants } from "motion"
+import type { Variants } from "framer-motion"
 import { MotionUl, MotionLi } from "../utils/lazy-ui"
 import { SectionHeader } from "./SectionHeader"
 

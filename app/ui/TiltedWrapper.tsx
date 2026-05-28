@@ -1,7 +1,7 @@
 "use client"
-import type { SpringOptions } from "motion/react"
+import type { SpringOptions } from "framer-motion"
 import { useRef, useCallback } from "react"
-import { useMotionValue, useSpring } from "motion/react"
+import { useMotionValue, useSpring } from "framer-motion"
 import { MotionDiv } from "../utils/lazy-ui"
 
 export interface TiltedWrapperProps {

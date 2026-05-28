@@ -1,7 +1,7 @@
 "use client"
 
 import { MotionDiv } from "../utils/lazy-ui"
-import type { Variants } from "motion"
+import type { Variants } from "framer-motion"
 import { SectionHeader } from "./SectionHeader"
 import { AnimatedH2 } from "./ui/AnimatedH2"
 
@@ -31,16 +31,17 @@ const timelineData: TimelineItem[] = [
     ),
   },
   {
-    date: "09/2025 — 11/2025",
-    title: "UI/UX Design Internship",
-    institution: "Gradscaler Technologies Pvt. Ltd.",
+    date: "2025 — Present",
+    title: "Open-Source & Personal Projects",
+    institution: "GitHub · Build in public",
     description:
-      "Designed responsive dashboard interfaces, created AWS-related page layouts, and collaborated with dev teams to refine user experiences based on feasibility and feedback.",
+      "Building real projects end-to-end, improving code quality through iteration, and sharing work publicly. Focusing on clean UI, performance, accessibility, and maintainable architecture.",
     type: "certification",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-5 w-5">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="M8 21h8m-4-4v4" />
+        <path d="M16 18 22 12 16 6" />
+        <path d="M8 6 2 12l6 6" />
+        <path d="M14 4 10 20" />
       </svg>
     ),
   },

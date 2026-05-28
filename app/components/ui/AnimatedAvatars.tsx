@@ -1,5 +1,5 @@
 import Image from "next/image"
-import type { Variants } from "motion"
+import type { Variants } from "framer-motion"
 import { REVIEW_MAP } from "@/app/data/review-data"
 import { MotionDiv } from "@/app/utils/lazy-ui"
 

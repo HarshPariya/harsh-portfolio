@@ -1,25 +1,27 @@
 "use client"
 
-import * as motion from "motion/react-m"
-import { LazyMotion, domAnimation } from "motion/react"
+import type { ReactNode } from "react"
+import { LazyMotion, MotionConfig, domAnimation, m } from "framer-motion"
 
-export const MotionWrapper = ({ children }: { children: React.ReactNode }) => {
+export const MotionWrapper = ({ children }: { children: ReactNode }) => {
   return (
-    <LazyMotion strict features={domAnimation}>
-      {children}
-    </LazyMotion>
+    <MotionConfig reducedMotion="never">
+      <LazyMotion strict features={domAnimation}>
+        {children}
+      </LazyMotion>
+    </MotionConfig>
   )
 }
 
-export const MotionDiv = motion.div
-export const MotionSpan = motion.span
-export const MotionH2 = motion.h2
-export const MotionArticle = motion.article
-export const MotionLi = motion.li
-export const MotionUl = motion.ul
-export const MotionCircle = motion.circle
-export const MotionSvg = motion.svg
-export const MotionPath = motion.path
-export const MotionH1 = motion.h1
-export const MotionP = motion.p
-export const MotionButton = motion.button
+export const MotionDiv = m.div
+export const MotionSpan = m.span
+export const MotionH2 = m.h2
+export const MotionArticle = m.article
+export const MotionLi = m.li
+export const MotionUl = m.ul
+export const MotionCircle = m.circle
+export const MotionSvg = m.svg
+export const MotionPath = m.path
+export const MotionH1 = m.h1
+export const MotionP = m.p
+export const MotionButton = m.button

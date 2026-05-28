@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import type { Variants } from "motion"
+import type { Variants } from "framer-motion"
 import { MotionH2, MotionSpan } from "../utils/lazy-ui"
 
 interface Props {
