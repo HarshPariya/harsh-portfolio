@@ -32,7 +32,7 @@ export const STATIC_PROJECTS: StaticProject[] = [
     type: "AI Technical Assistant",
     text: "View on GitHub",
     title: "SquidAI",
-    href: "https://squidai.onrender.com/",
+    href: "https://squid-ai-phi.vercel.app/",
     githubUrl: "https://github.com/HarshPariya/SquidAI",
     ariaLabel: "View SquidAI on GitHub",
     isExternal: true,

@@ -687,7 +687,7 @@ export const squidai: ProjectData = {
     description:
       "SquidAI is an AI-powered technical assistant that helps developers generate, explain, and refactor code faster. It focuses on practical use-cases like debugging help and boilerplate generation.",
     categories: ["AI", "Full Stack", "React", "Node"],
-    link: "https://squidai.onrender.com/",
+    link: "https://squid-ai-phi.vercel.app/",
     githubLink: "https://github.com/HarshPariya/SquidAI",
   },
   slug: "squidai",
