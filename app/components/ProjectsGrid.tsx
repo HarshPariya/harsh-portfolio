@@ -120,7 +120,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           color="#4C1D95"
           type="AI Technical Assistant"
           progress={progress}
-          href="https://squidai.onrender.com/"
+          href="https://squid-ai-phi.vercel.app/"
           githubUrl="https://github.com/HarshPariya/SquidAI"
           title="SquidAI"
           priority={true}
