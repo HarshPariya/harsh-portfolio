@@ -1,34 +1,84 @@
-// app/_components/DotCursor.tsx
 "use client"
+
 import { useEffect, useRef } from "react"
-import { useSpring } from "framer-motion"
+import {
+  useMotionValue,
+  useSpring,
+  useVelocity,
+  useTransform,
+} from "framer-motion"
 import { MotionDiv, MotionSpan } from "../utils/lazy-ui"
 
-const BASE_W = 20
-const BASE_H = 20
-const HOVER_H = 30
-const PAD_X = 8 // px padding left/right around text
-const MAX_W = 260 // hard cap so long labels don't get silly-wide
-const spring = { stiffness: 400, damping: 50, restDelta: 0.001 }
+/* ─── tuning knobs ────────────────────────────────────────── */
+const BASE_SIZE = 20          // resting dot diameter (px)
+const HOVER_H   = 30          // height when showing a label
+const MAX_W     = 260         // maximum label width
+const PAD_X     = 10          // horizontal padding inside label pill
+
+/* spring for cursor position — tight, responsive */
+const POS_SPRING  = { stiffness: 600, damping: 55, mass: 0.5 }
+/* spring for elastic shape — snappy recovery */
+const SHAPE_SPRING = { stiffness: 180, damping: 16 }
+/* ─────────────────────────────────────────────────────────── */
 
 export function DotCursor() {
-  const labelRef = useRef<HTMLSpanElement>(null)
+  const labelRef     = useRef<HTMLSpanElement>(null)
   const lastTargetRef = useRef<HTMLElement | null>(null)
 
-  // motion values (no React state → no rerenders)
-  const x = useSpring(0, spring)
-  const y = useSpring(0, spring)
-  const w = useSpring(BASE_W, spring)
-  const h = useSpring(BASE_H, spring)
+  /* raw pointer position — updated instantly */
+  const rawX = useMotionValue(-200)
+  const rawY = useMotionValue(-200)
+
+  /* smoothed display position */
+  const x = useSpring(rawX, POS_SPRING)
+  const y = useSpring(rawY, POS_SPRING)
+
+  /* framer-motion velocity (px / s) derived from the spring values */
+  const vx = useVelocity(x)
+  const vy = useVelocity(y)
+
+  /* label expansion */
+  const w            = useSpring(BASE_SIZE, SHAPE_SPRING)
+  const h            = useSpring(BASE_SIZE, SHAPE_SPRING)
   const labelOpacity = useSpring(0, { stiffness: 300, damping: 40 })
+
+  /* ─── elastic stretch ──────────────────────────────────── */
+  /* Speed-based stretch: faster → wider in direction of travel */
+  const scaleX = useSpring(
+    useTransform(() => {
+      const speed = Math.sqrt(vx.get() ** 2 + vy.get() ** 2)
+      return 1 + Math.min(speed / 280, 1.4)
+    }),
+    SHAPE_SPRING
+  )
+
+  /* Squash: compensates for scaleX so volume feels preserved */
+  const scaleY = useSpring(
+    useTransform(() => {
+      const speed = Math.sqrt(vx.get() ** 2 + vy.get() ** 2)
+      return Math.max(0.3, 1 - Math.min(speed / 450, 0.7))
+    }),
+    SHAPE_SPRING
+  )
+
+  /* Rotate the dot to face its direction of travel */
+  const rotate = useTransform(() => {
+    const velX = vx.get()
+    const velY = vy.get()
+    if (Math.abs(velX) < 3 && Math.abs(velY) < 3) return 0
+    return Math.atan2(velY, velX) * (180 / Math.PI)
+  })
+  /* ─────────────────────────────────────────────────────── */
 
   useEffect(() => {
     const onMove = (ev: PointerEvent) => {
-      const { clientX, clientY } = ev
-      x.set(clientX)
-      y.set(clientY)
+      rawX.set(ev.clientX)
+      rawY.set(ev.clientY)
 
-      const el = (ev.target as Element | null)?.closest?.<HTMLElement>("[data-text]") ?? null
+      /* label-hover detection */
+      const target = ev.target as Element | null
+      const el = (target?.closest("[data-text]") as HTMLElement) ?? null
+
       if (el === lastTargetRef.current) return
       lastTargetRef.current = el
 
@@ -37,59 +87,60 @@ export function DotCursor() {
 
       if (!el || !text) {
         if (span) span.textContent = ""
-        w.set(BASE_W)
-        h.set(BASE_H)
+        w.set(BASE_SIZE)
+        h.set(BASE_SIZE)
         labelOpacity.set(0)
         return
       }
 
-      // Set text, measure width, then grow bubble to fit
       if (span) {
         span.textContent = text
-        // measure after textContent assignment (sync)
         const textW = Math.ceil(span.scrollWidth)
-        const targetW = Math.min(Math.max(BASE_W, textW + PAD_X * 2), MAX_W)
-
+        const targetW = Math.min(Math.max(BASE_SIZE, textW + PAD_X * 2), MAX_W)
         w.set(targetW)
         h.set(HOVER_H)
-        // fade text after width begins expanding
         labelOpacity.set(1)
       }
     }
 
-    const onLeaveWindow = () => {
+    const onLeave = () => {
       lastTargetRef.current = null
-      if (labelRef.current) labelRef.current.textContent = ""
-      w.set(BASE_W)
-      h.set(BASE_H)
+      const span = labelRef.current
+      if (span) span.textContent = ""
+      w.set(BASE_SIZE)
+      h.set(BASE_SIZE)
       labelOpacity.set(0)
     }
 
     window.addEventListener("pointermove", onMove, { passive: true })
-    window.addEventListener("pointerleave", onLeaveWindow)
-
+    window.addEventListener("pointerleave", onLeave)
     return () => {
       window.removeEventListener("pointermove", onMove)
-      window.removeEventListener("pointerleave", onLeaveWindow)
+      window.removeEventListener("pointerleave", onLeave)
     }
-  }, [x, y, w, h, labelOpacity])
+  }, [rawX, rawY, w, h, labelOpacity])
 
   return (
     <MotionDiv
+      aria-hidden="true"
       style={{
         x,
         y,
-        width: w,
+        translateX: "-50%",
+        translateY: "-50%",
+        width:  w,
         height: h,
+        scaleX,
+        scaleY,
+        rotate,
         willChange: "transform, width, height",
       }}
-      className="pointer-events-none fixed top-0 left-0 isolate z-[60] flex w-fit -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full bg-white mix-blend-difference backdrop-blur-[1px]"
+      className="pointer-events-none fixed top-0 left-0 isolate z-[60] flex items-center justify-center overflow-hidden rounded-full bg-white mix-blend-difference"
     >
-      {/* text stays crisp (not blended, not scaled) */}
       <MotionSpan
         ref={labelRef}
         style={{ opacity: labelOpacity }}
-        className="relative z-4 px-2 text-sm leading-none font-semibold whitespace-nowrap select-none"
+        className="relative z-10 px-2 text-sm leading-none font-semibold whitespace-nowrap select-none"
       />
     </MotionDiv>
   )

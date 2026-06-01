@@ -13,10 +13,10 @@ export function DesktopCursor() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    // Defer loading of the cursor to reduce initial TBT
+    // Small defer to reduce initial TBT
     const timer = setTimeout(() => {
       setIsVisible(true)
-    }, 3500)
+    }, 300)
     return () => clearTimeout(timer)
   }, [])
 

@@ -95,6 +95,13 @@ body {
   color: #3d2e22;
 }
 
+/* Hide the native cursor on desktop so our custom cursor is visible */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
 @layer base {
 
   button:not(:disabled),
