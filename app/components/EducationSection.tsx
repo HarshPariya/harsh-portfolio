@@ -48,7 +48,7 @@ const timelineData: TimelineItem[] = [
   {
     date: "2025",
     title: "Full Stack Developer — Freelance",
-    institution: "Korsaq (Numble Game)",
+    institution: "Numble Game · Freelance",
     description:
       "Developed a multiplayer web-based game with real-time gameplay logic. Built and integrated frontend and backend for seamless user interactions using the MERN stack.",
     type: "certification",

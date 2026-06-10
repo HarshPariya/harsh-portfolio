@@ -36,7 +36,7 @@ export const ExperienceSection: React.FC = () => {
                 <div className="flex flex-col gap-4 md:flex-row md:justify-between md:gap-8 border-b border-black/15 pb-12 last:border-0 last:pb-0">
                     <div className="flex flex-col gap-1 md:gap-2">
                         <h3 className="text-2xl font-medium tracking-tight text-stone-800 md:text-3xl">Full Stack Developer</h3>
-                        <span className="text-lg text-stone-500">Korsaq (Freelance Project)</span>
+                        <span className="text-lg text-stone-500">Freelance · Web Project</span>
                     </div>
 
                     <div className="flex flex-col gap-4 md:max-w-md lg:max-w-lg">

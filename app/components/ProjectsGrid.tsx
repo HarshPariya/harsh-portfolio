@@ -8,7 +8,7 @@ import clsx from "clsx"
 import { useOffset } from "../hooks/useOffset"
 import { useIsMobile } from "../hooks/useMediaQuery"
 import { useRef, useEffect } from "react"
-import { useScroll, useSpring } from "framer-motion"
+import { useScroll, useSpring, useMotionValue } from "framer-motion"
 import { useUI } from "@react-zero-ui/core"
 import { externalLinks } from "@/config/siteConfig"
 
@@ -29,7 +29,41 @@ export function ProjectsGrid({ className }: { className?: string }) {
   const stiffness = isMobile ? 120 : 220
   const damping = isMobile ? 50 : 90
 
-  const progress = useSpring(scrollYProgress, { stiffness, damping })
+  const rawProgress = useSpring(scrollYProgress, { stiffness, damping })
+
+  // Once cards fully settle into the grid, lock them there.
+  // Only unlock when the user scrolls all the way back to the top.
+  const lockedRef = useRef(false)
+  const progress = useMotionValue(0)
+
+  const triggerProgress = isMobile ? (isSmallScreen ? 0.15 : 0.2) : 0.5
+
+  useEffect(() => {
+    const unsubscribe = rawProgress.on("change", (v) => {
+      if (lockedRef.current) {
+        // Check if user scrolled back to the very top
+        if (scrollYProgress.get() < 0.02) {
+          lockedRef.current = false
+          progress.set(v)
+          setReveal("false")
+        }
+        // Otherwise stay locked at 1
+        return
+      }
+
+      // Not locked — follow the spring
+      if (v >= triggerProgress) {
+        // Cards reached the grid — lock them
+        lockedRef.current = true
+        progress.set(1)
+        setReveal("true")
+      } else {
+        progress.set(v)
+        setReveal("false")
+      }
+    })
+    return unsubscribe
+  }, [rawProgress, progress, scrollYProgress, setReveal, triggerProgress])
 
   const OFFSET_TUNING: Record<string, Partial<HeroOffset>> = {
     squidai: { rot: 9, s: responsiveScale, dx: isMobile ? -220 : -30, dy: isMobile ? -120 : -40 },
@@ -53,23 +87,10 @@ export function ProjectsGrid({ className }: { className?: string }) {
       ]
     })
   )
-
-  const triggerProgress = isMobile ? (isSmallScreen ? 0.15 : 0.2) : 0.5
-  useEffect(() => {
-    const unsubscribe = progress.on("change", (latest) => {
-      if (latest >= triggerProgress) {
-        setReveal("true") // Reveal ON
-      } else {
-        setReveal("false") // Reveal OFF
-      }
-    })
-
-    return unsubscribe
-  }, [progress, setReveal, triggerProgress])
   return (
     <section id="projects-grid" className={clsx("relative scroll-mt-36", className)} ref={ref}>
       <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
-       
+
         <AnimatedCard
           key="campus-navigation"
           src={campusNavImage}
@@ -82,6 +103,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           href="https://campus-navigation-sigma.vercel.app/"
           githubUrl="https://github.com/HarshPariya/Campus_Navigation_Frontend"
           title="Campus Navigation System"
+          index={1}
         />
 
         <AnimatedCard
@@ -96,6 +118,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
           href="https://travelgo-by-hp01.netlify.app/"
           githubUrl="https://github.com/HarshPariya/Travel-GO-Frontend"
           title="TravelGo"
+          index={2}
         />
 
         <AnimatedCard
@@ -110,8 +133,10 @@ export function ProjectsGrid({ className }: { className?: string }) {
           href="https://quiz-app-by-harsh.netlify.app/"
           githubUrl="https://github.com/HarshPariya/Quiz-App-Frontend"
           title="Quiz App"
+          index={3}
         />
-         <AnimatedCard
+
+        <AnimatedCard
           key={"squidai"}
           src={squidaiImage}
           alt={"SquidAI Preview"}
@@ -124,8 +149,9 @@ export function ProjectsGrid({ className }: { className?: string }) {
           githubUrl="https://github.com/HarshPariya/SquidAI"
           title="SquidAI"
           priority={true}
+          index={4}
         />
-        
+
       </div>
     </section>
   )

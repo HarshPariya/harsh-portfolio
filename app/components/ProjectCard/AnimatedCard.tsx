@@ -29,9 +29,10 @@ export interface AnimatedCardProps {
   githubUrl?: string
   title?: string
   priority?: boolean
+  index?: number
 }
 
-export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, href, githubUrl, title, priority }: AnimatedCardProps) {
+export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, href, githubUrl, title, priority, index }: AnimatedCardProps) {
   const ref = useRef<HTMLDivElement>(null)
   useCompositorSpring(ref, progress)
 
@@ -55,15 +56,17 @@ export function AnimatedCard({ src, alt, offset, color, type, gridId, progress, 
         }
         className={clsx("group relative h-full w-full transform-gpu opacity-1 will-change-[transform,opacity] contain-content backface-hidden")}
       >
-        {/* The Card component now handles the internal links (buttons). 
-            We can make the image itself clickable by wrapping ONLY the image in Card if we wanted, 
-            but Card handles the layout. Let's rely on the buttons inside Card for explicit actions, 
-            or make the whole card clickable via an overlay link if needed. 
-            For this design, let's pass the URLs to Card. If we want the whole card to be clickable, 
-            we need to avoid nested <a> tags. Card uses <a> tags for buttons. 
-            So we should NOT wrap Card in an <a> tag.
-        */}
-        <Card src={src} alt={alt} liveUrl={primaryLink} githubUrl={githubUrl} title={title} detailUrl={`${SITE_SLUGS.projects}/${gridId}`} priority={priority} />
+        <Card
+          src={src}
+          alt={alt}
+          liveUrl={primaryLink}
+          githubUrl={githubUrl}
+          title={title}
+          detailUrl={`${SITE_SLUGS.projects}/${gridId}`}
+          priority={priority}
+          color={color}
+          index={index}
+        />
       </div>
     </div>
   )

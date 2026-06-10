@@ -28,10 +28,10 @@ const testimonials: Testimonial[] = [
   {
     quote:
       "Working with Harsh on Numble was an excellent experience. He built both the frontend and backend from scratch, handled real-time multiplayer logic flawlessly, and communicated progress clearly throughout the project.",
-    name: "Korsaq",
-    role: "Client",
-    company: "Freelance Project",
-    initials: "KQ",
+    name: "Numble Project",
+    role: "Freelance Client",
+    company: "Web Game Development",
+    initials: "NP",
     accentColor: "var(--beige-400)",
   },
   {
