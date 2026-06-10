@@ -87,6 +87,7 @@ export function ProjectsGrid({ className }: { className?: string }) {
       ]
     })
   )
+
   return (
     <section id="projects-grid" className={clsx("relative scroll-mt-36", className)} ref={ref}>
       <div className="relative z-4 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 md:grid-rows-2">
@@ -97,13 +98,10 @@ export function ProjectsGrid({ className }: { className?: string }) {
           alt={"Campus Navigation System Preview"}
           offset={offsets["campus-navigation"]}
           gridId="campus-navigation"
-          color="#0F766E"
-          type="Campus Navigation System"
           progress={progress}
           href="https://campus-navigation-sigma.vercel.app/"
           githubUrl="https://github.com/HarshPariya/Campus_Navigation_Frontend"
           title="Campus Navigation System"
-          index={1}
         />
 
         <AnimatedCard
@@ -112,13 +110,10 @@ export function ProjectsGrid({ className }: { className?: string }) {
           alt={"TravelGo Travel Agency Preview"}
           offset={offsets["travelgo"]}
           gridId="travelgo"
-          color="#EA580C"
-          type="Travel Agency Website"
           progress={progress}
           href="https://travelgo-by-hp01.netlify.app/"
           githubUrl="https://github.com/HarshPariya/Travel-GO-Frontend"
           title="TravelGo"
-          index={2}
         />
 
         <AnimatedCard
@@ -127,13 +122,10 @@ export function ProjectsGrid({ className }: { className?: string }) {
           alt={"Quiz App Preview"}
           offset={offsets["quiz-app"]}
           gridId="quiz-app"
-          color="#16A34A"
-          type="Quiz Application"
           progress={progress}
           href="https://quiz-app-by-harsh.netlify.app/"
           githubUrl="https://github.com/HarshPariya/Quiz-App-Frontend"
           title="Quiz App"
-          index={3}
         />
 
         <AnimatedCard
@@ -142,14 +134,11 @@ export function ProjectsGrid({ className }: { className?: string }) {
           alt={"SquidAI Preview"}
           offset={offsets["squidai"]}
           gridId="squidai"
-          color="#4C1D95"
-          type="AI Technical Assistant"
           progress={progress}
           href="https://squid-ai-phi.vercel.app/"
           githubUrl="https://github.com/HarshPariya/SquidAI"
           title="SquidAI"
           priority={true}
-          index={4}
         />
 
       </div>
