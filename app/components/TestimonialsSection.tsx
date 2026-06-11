@@ -18,24 +18,6 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Harsh consistently delivered high-quality work ahead of schedule. His ability to take ownership of full-stack features — from database design to polished UI — made him an invaluable asset to our team.",
-    name: "Gradscaler Team",
-    role: "Supervisor",
-    company: "Gradscaler Technologies",
-    initials: "GT",
-    accentColor: "var(--beige-500)",
-  },
-  {
-    quote:
-      "Working with Harsh on Numble was an excellent experience. He built both the frontend and backend from scratch, handled real-time multiplayer logic flawlessly, and communicated progress clearly throughout the project.",
-    name: "Numble Project",
-    role: "Freelance Client",
-    company: "Web Game Development",
-    initials: "NP",
-    accentColor: "var(--beige-400)",
-  },
-  {
-    quote:
       "Harsh has a rare combination of strong technical fundamentals and creative problem-solving. His projects consistently demonstrate a deep understanding of modern web architecture and user-centric design thinking.",
     name: "Prof. Pawan Shah",
     role: "Faculty Advisor",
@@ -193,8 +175,8 @@ export const TestimonialsSection = () => {
                 key={i}
                 onClick={() => setPage([i, i > currentIndex ? 1 : -1])}
                 className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex
-                    ? "w-8 bg-[var(--beige-500)]"
-                    : "w-2 bg-stone-300 hover:bg-stone-400"
+                  ? "w-8 bg-[var(--beige-500)]"
+                  : "w-2 bg-stone-300 hover:bg-stone-400"
                   }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />

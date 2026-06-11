@@ -46,11 +46,11 @@ const timelineData: TimelineItem[] = [
     ),
   },
   {
-    date: "2025",
-    title: "Full Stack Developer — Freelance",
-    institution: "Numble Game · Freelance",
+    date: "2025 — 2026",
+    title: "Frontend Developer — Project Lead",
+    institution: "SquidAI Project",
     description:
-      "Developed a multiplayer web-based game with real-time gameplay logic. Built and integrated frontend and backend for seamless user interactions using the MERN stack.",
+      "Spearheaded the frontend development of an AI technical assistant. Designed intuitive user interfaces and integrated complex machine learning APIs for real-time interaction.",
     type: "certification",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-5 w-5">
