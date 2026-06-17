@@ -10,23 +10,23 @@ export const SplashCursor = /*#__PURE__*/ dynamic(() => import("../components/Sp
 })
 
 export function LazySplashCursor() {
-  const hasFinePointer = useMediaQuery("(pointer:fine)")
-  const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)")
+  const isTouch = useTouch()
 
-  if (!hasFinePointer || reduceMotion) return null
-
-  // Always render the fluid cursor for pointer devices so it follows
-  // the cursor across the entire site.
+  // Render on ALL devices — desktop AND mobile.
+  // The SplashCursor component already handles both mouse and touch events.
+  // On touch/mobile devices, use lower resolution for better performance & battery life.
   return (
     <SplashCursor
+      SIM_RESOLUTION={isTouch ? 64 : 128}
+      DYE_RESOLUTION={isTouch ? 128 : 256}
       DENSITY_DISSIPATION={1.2}
       VELOCITY_DISSIPATION={0.9}
       PRESSURE={0.15}
-      PRESSURE_ITERATIONS={30}
+      PRESSURE_ITERATIONS={isTouch ? 15 : 30}
       CURL={18}
-      SPLAT_RADIUS={0.35}
+      SPLAT_RADIUS={isTouch ? 0.5 : 0.35}
       SPLAT_FORCE={9000}
-      SHADING
+      SHADING={!isTouch}
       COLOR_UPDATE_SPEED={7}
       BACK_COLOR={{ r: 5, g: 8, b: 20 }}
       TRANSPARENT

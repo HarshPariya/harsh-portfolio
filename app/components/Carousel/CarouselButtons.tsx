@@ -163,9 +163,9 @@ export function CarouselButtons({ total, desktopVis, autoPlayInterval, activeSta
 
   // ---------- autoplay lifecycle + pause conditions ----------
   useEffect(() => {
-    // respect reduced motion
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    pausedRef.current = pausedRef.current || prefersReduced
+    // NOTE: We intentionally skip the prefers-reduced-motion check here.
+    // The global MotionConfig sets reducedMotion="never", so carousel
+    // autoplay should work consistently for all users.
 
     // pause when offscreen
     const track = trackRef.current
