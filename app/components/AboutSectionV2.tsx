@@ -25,7 +25,7 @@ export const AboutSectionV2 = ({ className = "" }: { className?: string }) => {
           <div className="flex [flex:1_0_0px] flex-col gap-6">
             {/* portrait + overlay icons */}
 
-            <ImageReveal src={profilePhoto} alt="Harsh Pariya" className="custom-shadow aspect-[4/4.5]" />
+            <ImageReveal src={profilePhoto} alt="Harsh Pariya" className="custom-shadow aspect-square" />
 
             {/* name + role */}
             <MotionDiv
